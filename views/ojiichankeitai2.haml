@@ -1,0 +1,9 @@
+%h1 ojiichankeitai2
+%p = user
+%div{id: "keitaibody"}
+%form{id: "oauth"}
+  %input{type: "hidden", name: "oauth_token", value: oauth_token}
+  %input{type: "hidden", name: "oauth_token_secret", value: oauth_token_secret}
+  %input{type: "hidden", name: "oauth_access_token", value: oauth_access_token}
+  %input{type: "hidden", name: "oauth_access_token_secret", value: oauth_access_token_secret}
+%script{src: "/js/client.js"}

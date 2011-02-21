@@ -1,0 +1,13 @@
+%h1 ojiichankeitai2
+%p = user
+%div{id: "keitaibody"}
+  %_div
+    %span{id: "batari", onclick: "javacript:postText('basic_batari')"}
+      batari
+    %span{id: "gabari", onclick: "javacript:postText('basic_gabari')"}
+      gabari
+    %span{id: "furoha", onclick: "javacript:postText('basic_furoha')"}
+      furoha
+    %span{id: "furoa", onclick: "javacript:postText('basic_furoa')"}
+      furoa
+%script{src: "/js/client.js"}

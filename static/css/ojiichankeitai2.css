@@ -1,0 +1,22 @@
+#keitaibody {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding:0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/image/main.png");
+  background-size: 100% 100%;
+}
+#_batari {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding:0;
+  margin: 0;
+  width: 50%;
+  height: 50%;
+  background-image: url("/image/button_batari_on.png");
+  background-size: 100% 100%;
+}
