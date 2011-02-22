@@ -7,8 +7,8 @@ http://localhost:3000/
 CACHE:
 #scripts
 js/underscore-min.js
-js/init.js
-js/client.js
+#js/init.js
+#js/client.js
 
 #css
 css/ojiichankeitai2.css
