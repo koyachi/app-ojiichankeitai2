@@ -1,9 +1,5 @@
 CACHE MANIFEST
 
-NETWORK:
-http://arena.no.de/
-http://localhost:3000/
-
 CACHE:
 #scripts
 js/underscore-min.js
@@ -34,3 +30,8 @@ image/screen_ok1.png
 image/screen_ok2.png
 image/screen_post1.png
 image/screen_post2.png
+
+NETWORK:
+http://arena.no.de/
+http://localhost:3000/
+

@@ -112,7 +112,9 @@ var images = {
     x: 0,
     y: 0,
     w: 150,
-    h: 150
+    h: 150,
+    wScale: 1.5,
+    hScale: 1.5,
   },
   batari: {
     msg_id: 'basic_batari',
@@ -180,10 +182,12 @@ document.onclick = function(){
 
 function imageHtml(label, imageStatus) {
   var image = images[label];
-  var x = image.x * Screen.wFactor;
-  var y = image.y * Screen.hFactor;
-  var w = image.w * Screen.wFactor;
-  var h = image.h * Screen.hFactor;
+  var w = image.w * Screen.wFactor * (image.wScale ? image.wScale : 1);
+  var h = image.h * Screen.hFactor * (image.hScale ? image.hScale : 1);
+  var offsetX = image.wScale ? -1 * (w - image.w * Screen.wFactor) / 2 : 0;
+  var offsetY = image.hScale ? -1 * (h - image.h * Screen.hFactor) / 2 : 0;
+  var x = image.x * Screen.wFactor + offsetX;
+  var y = image.y * Screen.hFactor + offsetY;
   var clickHandler = (image.msg_id) ? 'onclick="javascript:buttonClicked(\'' + image.msg_id + '\')" ' : '';
   var html = [
     '<img id="' + label + '" ',
