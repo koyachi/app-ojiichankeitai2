@@ -173,7 +173,7 @@ conf.initConfig(function(err){
     }
   });
 
-  app.listen(conf.port);
+  app.listen(process.env.PORT || conf.port);
   console.log('Server running at http"//' + conf.host + ':' + conf.port + '/');
 });
 

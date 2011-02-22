@@ -161,7 +161,7 @@ function buttonClicked(text){
       setTimeout(function(){
         Screen.stopAnimation();
       }, 4000);
-      window.alert('done');
+//      window.alert('done');
     }
   }
   xhr.send([
