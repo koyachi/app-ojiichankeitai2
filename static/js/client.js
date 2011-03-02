@@ -63,6 +63,11 @@ function stopAnimation(e){
     this.animationCount = 0;
   }
 }
+function displayStaticImage(image, e) {
+  var elm = document.getElementById(this.elmId);
+  if (this.fixPosition) this.fixPosition(e);
+  elm.src = "/image/" + image + ".png";
+}
 
 var Screen = {
   status: '',
@@ -77,6 +82,8 @@ var Screen = {
 Screen.startSendingAnimation = _.bind(startAnimation, Screen, ['screen_post1', 'screen_post2']);
 Screen.startOkAnimation = _.bind(startAnimation, Screen, ['screen_ok1', 'screen_ok2']);
 Screen.stopAnimation = _.bind(stopAnimation, Screen, null);
+Screen.displayError = _.bind(displayStaticImage, Screen, 'screen_ng');
+Screen.displayBlank = _.bind(displayStaticImage, Screen, 'screen_blank');
 
 var Touch = {
   status: '',
@@ -159,10 +166,20 @@ function buttonClicked(text){
     if (xhr.readyState === 4) {
       var data = xhr.responseText;
       Screen.stopAnimation();
-      Screen.startOkAnimation();
-      setTimeout(function(){
-        Screen.stopAnimation();
-      }, 4000);
+      if (data == 'ok') {
+        Screen.startOkAnimation();
+        setTimeout(function(){
+          Screen.stopAnimation();
+        }, 4000);
+      }
+      else {
+        // error
+        Screen.displayError();
+        window.alert('ERROR:postToTwitter: ' + data);
+        setTimeout(function(){
+          Screen.displayBlank();
+        }, 4000);
+      }
 //      window.alert('done');
     }
   }

@@ -167,7 +167,6 @@ conf.initConfig(function(err){
       }
       console.log('Post to Twitter: ' + message[msg_id]);
       postToTwitter(req, res, message[msg_id]);
-      res.send(message[msg_id]);
     } else {
       res.redirect('/');
     }
